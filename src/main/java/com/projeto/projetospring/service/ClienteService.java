@@ -1,6 +1,7 @@
 package com.projeto.projetospring.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.projeto.projetospring.models.Cliente;
 import com.projeto.projetospring.repository.ClienteRepository;
@@ -14,10 +15,8 @@ public class ClienteService {
     @Autowired
     ClienteRepository clienteRepository;
 
-    public ArrayList<Cliente> findAll() {
-        ArrayList<Cliente> listaRetorno = new ArrayList<Cliente>();
-        listaRetorno = (ArrayList<Cliente>)clienteRepository.findAll();
-        return listaRetorno;
+    public List<Cliente> findAll() {
+        return clienteRepository.findAll();
     }
 
     public void save(Cliente cliente) {

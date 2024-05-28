@@ -1,6 +1,7 @@
 package com.projeto.projetospring.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.projeto.projetospring.models.Cliente;
 import com.projeto.projetospring.service.ClienteService;
@@ -31,9 +32,9 @@ public class ClienteController {
     ClienteService clienteService;
 
     @GetMapping
-    public ResponseEntity<ArrayList<Cliente>> findAll() {
-        ArrayList<Cliente> clientes = clienteService.findAll();
-        return new ResponseEntity<ArrayList<Cliente>>(clientes, HttpStatus.OK);
+    public ResponseEntity<List<Cliente>> findAll() {
+        List<Cliente> clientes = clienteService.findAll();
+        return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
     }
 
     @PostMapping("/salvar")
